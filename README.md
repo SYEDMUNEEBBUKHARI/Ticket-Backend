@@ -3,7 +3,7 @@
 2) Add linter
 3) Agg logger
 4) auth middleware passport
-5) APIS
+5) APIS and ORM configurations
 6) ADD Ticket
 7) update Todos
 8) delete todos
@@ -12,3 +12,8 @@
 
 
 i have setted the structure for user we can go with it by making APIS
+
+
+Regards.
+
+SYED MUNIB
