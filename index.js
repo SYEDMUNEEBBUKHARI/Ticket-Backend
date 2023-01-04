@@ -1,6 +1,7 @@
 const express = require('express')
 const app = express()
 const morgan = require('morgan')
+const cors = require('cors')
 const session = require('express-session')
 const connectRedis = require('connect-redis')
 // eslint-disable-next-line no-unused-vars
@@ -18,7 +19,18 @@ const RedisStore = connectRedis(session)
 
 //Configure session middleware
 const SESSION_SECRET = process.env.SESSION_SECRET
+var whitelist = ['http://localhost:8080/', 'http://localhost:8080']
+var corsOptions = {
+  origin: function (origin, callback) {
+    if (whitelist.indexOf(origin) !== -1) {
+      callback(null, true)
+    } else {
+      callback(new Error('Not allowed by CORS'))
+    }
+  },
+}
 
+app.use(cors(corsOptions))
 app.use(
   session({
     store: new RedisStore({ client: redisClient }),
