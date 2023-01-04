@@ -9,3 +9,6 @@
 8) delete todos
 9) get specific user ticket
 10) get all User Ticket
+
+
+i have setted the structure for user we can go with it by making APIS
